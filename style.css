@@ -1,0 +1,50 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #050210;
+}
+
+.ring-extern {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.ring {
+    width: 200px;
+    height: 200px;
+    background: #050210;
+    position: relative;
+    border-radius: 50%;
+}
+
+.ring::before, .ring::after {
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background:linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
+    transform: scale(1.2);
+    z-index: -1;
+    animation: animatie 3s linear  infinite;
+}
+
+.ring::after {
+    filter: blur(15px);
+    z-index: -2;
+}
+
+@keyframes animatie {
+    0% {
+        transform: rotate(0) scale(1.2);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.2);
+    }
+}
+
+#fb5dad, #55fb9f, #b97aff;
